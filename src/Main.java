@@ -1,13 +1,21 @@
 public class Main {
 
     public static void main(String[] args){
-        Book dorianGray  = new Book("The picture of Dorian Gray", 1890);
-        Book winnieThePooh = new Book("Winnie-The-Pooh",1926);
         Author oscarWilde = new Author("Oscar","Wilde");
+        Book dorianGray  = new Book("The picture of Dorian Gray", 1890, oscarWilde.name+" "+oscarWilde.surname);
         Author alanMilne = new Author("Alan","Milne");
+        Book winnieThePooh = new Book("Winnie-The-Pooh",1926,alanMilne.name+" "+oscarWilde.surname);
 
         System.out.println ("Название книги '" + dorianGray.getNameOfTheBook()+"'");
+        System.out.println ("Автор книги " + dorianGray.getAuthor());
         System.out.println ("Год издания " + dorianGray.getPublicationYear());
-        System.out.println ("Автор книги " +  oscarWilde.getName()+" "+oscarWilde.getSurname());
+        dorianGray.setPublicationYear(1889);
+        System.out.println ("Исправленный год издания " + dorianGray.getPublicationYear());
+
+        System.out.println ("-------------------" );
+
+        System.out.println ("Название книги '" + winnieThePooh.getNameOfTheBook()+"'");
+        System.out.println ("Автор книги " + winnieThePooh.getAuthor());
+        System.out.println ("Год издания " + winnieThePooh.getPublicationYear());
     }
     }
